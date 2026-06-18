@@ -50,8 +50,8 @@ class GradleContentRootResolver(metadata: ProjectMetadata) {
         return contentRoots.map { contentRoot ->
             ContentRootData(
                 contentRoot.toString(),
-                emptyList(),
                 sourceSet.excludes.toMutableList(),
+                emptyList(),
                 sourceRoots = sourceRoots
                     .values
                     .filter { sourceRoot -> Path.of(sourceRoot.path).startsWith(contentRoot) }
