@@ -308,7 +308,7 @@ internal class IdeaProjectMapper {
             compilerOutputForTests = module.compilerOutput?.testOutputDir?.path,
             languageLevelId = "JDK_${targetJavaVersion}",
             manifestAttributes = emptyMap(),
-            excludeOutput = false
+            excludeOutput = !(module.compilerOutput?.inheritOutputDirs ?: false)
         )
     }
 
